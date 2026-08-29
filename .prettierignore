@@ -1,0 +1,4 @@
+node_modules
+dist
+src/data/content.generated.js
+package-lock.json
