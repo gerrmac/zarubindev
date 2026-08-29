@@ -8,6 +8,7 @@ const sourcePath = resolve(root, "content.yaml");
 const targetPath = resolve(root, "src/data/content.generated.js");
 
 const requiredKeys = [
+  "about",
   "nav",
   "roles",
   "stats",
@@ -31,6 +32,7 @@ const codeLines = data.hero.code.lines.map((tokens) => ({ tokens }));
 const quote = (value) => JSON.stringify(value, null, 2);
 
 const out = [
+  `export const about = ${quote(data.about)};`,
   `export const nav = ${quote(data.nav)};`,
   `export const roles = ${quote(data.roles)};`,
   `export const stats = ${quote(data.stats)};`,

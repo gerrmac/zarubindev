@@ -1,3 +1,17 @@
+export const about = {
+  "eyebrow": "Обо мне",
+  "title": "Дизайн, код и внимание к деталям",
+  "text": [
+    "Я fullstack-разработчик и веду продукт от идеи до продакшена: собираю аккуратный интерфейс на фронтенде и надёжную логику, API и базу данных на бэкенде.",
+    "На бэкенде — Node.js, Go и Rust, Telegram-боты на grammY и Telegraf.js, деплой через Docker и CI/CD. Разворачиваю локальные LLM на базе открытых моделей (llama.cpp, Ollama, vLLM) и собираю AI-агентов на n8n и других платформах."
+  ],
+  "link": {
+    "label": "Мои навыки",
+    "href": "#skills",
+    "icon": "arrowRight"
+  }
+};
+
 export const nav = [
   {
     "id": "about",

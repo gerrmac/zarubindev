@@ -1,4 +1,4 @@
-import { features } from "../data/content.generated";
+import { about, features } from "../data/content.generated";
 import { Icon } from "./Icon";
 
 export function About() {
@@ -6,22 +6,26 @@ export function About() {
     <section className="section about" id="about">
       <div className="container about__grid">
         <div className="about__intro">
-          <span className="eyebrow reveal">Обо мне</span>
+          <span className="eyebrow reveal">{about.eyebrow}</span>
           <h2 className="section-title reveal" style={{ "--reveal-delay": "60ms" }}>
-            Дизайн, код и внимание&nbsp;к&nbsp;деталям
+            {about.title}
           </h2>
-          <p className="about__text reveal" style={{ "--reveal-delay": "120ms" }}>
-            Я fullstack-разработчик и веду продукт от идеи до продакшена: собираю аккуратный
-            интерфейс на фронтенде и надёжную логику, API и базу данных на бэкенде.
-          </p>
-          <p className="about__text reveal" style={{ "--reveal-delay": "180ms" }}>
-            На бэкенде — Node.js, Go и Rust, Telegram-боты на grammY и Telegraf.js, деплой через
-            Docker и CI/CD. Разворачиваю локальные LLM на базе открытых моделей (llama.cpp, Ollama,
-            vLLM) и собираю AI-агентов на n8n и других платформах.
-          </p>
-          <a href="#skills" className="link-more reveal" style={{ "--reveal-delay": "240ms" }}>
-            Мои навыки
-            <Icon name="arrowRight" size={17} />
+          {about.text.map((paragraph, i) => (
+            <p
+              className="about__text reveal"
+              key={i}
+              style={{ "--reveal-delay": `${120 + i * 60}ms` }}
+            >
+              {paragraph}
+            </p>
+          ))}
+          <a
+            href={about.link.href}
+            className="link-more reveal"
+            style={{ "--reveal-delay": "240ms" }}
+          >
+            {about.link.label}
+            {about.link.icon && <Icon name={about.link.icon} size={17} />}
           </a>
         </div>
 
